@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: your-docker-image-tag # Remplacez par l'image Docker que vous avez construite
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGODB_URL
+              value: "mongodb+srv://root:1234@ccluster0.hsgng0p.mongodb.net/EStore" # Définissez votre URL MongoDB ici
