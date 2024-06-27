@@ -1,15 +1,15 @@
 version: '3.8'
 services:
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "8081:80"
-    environment:
-      - REACT_APP_BACKEND_URL=http://backend:5000
-    depends_on:
-      - backend
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "8081:80"
+  #   environment:
+  #     - REACT_APP_BACKEND_URL=http://backend:5000
+  #   depends_on:
+  #     - backend
 
   backend:
     build:
@@ -18,16 +18,17 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb://database:27017/EStore
-    depends_on:
-      - database
+      - MONGO_URI=mongodb://root:1234@database:27017/EStore
+    # depends_on:
+    #   - database
   
-  database:
-    image: mongo:latest
-    container_name: mongodb
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=1234
-      - MONGO_INITDB_DATABASE=EStore
-    ports:
-      - "27017:27017"
+  # database:
+  #   image: mongo:latest
+  #   container_name: mongodb
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=root
+  #     - MONGO_INITDB_ROOT_PASSWORD=1234
+  #     - MONGO_INITDB_DATABASE=EStore
+  #   ports:
+  #     - "27017:27017"
+

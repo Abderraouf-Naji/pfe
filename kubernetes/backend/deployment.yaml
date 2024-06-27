@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: backend
-          image: your-docker-image-tag # Remplacez par l'image Docker que vous avez construite
+          image: najiabderraouf2/backend:pfe
           ports:
             - containerPort: 5000
           env:
             - name: MONGODB_URL
-              value: "mongodb+srv://root:1234@ccluster0.hsgng0p.mongodb.net/EStore" # Définissez votre URL MongoDB ici
+              value: "mongodb://mongodb:27017/EStore" 
