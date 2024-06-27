@@ -17,6 +17,7 @@ spec:
       containers:
         - name: backend
           image: najiabderraouf2/backend:pfe
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           env:
