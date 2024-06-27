@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: your-docker-image-tag # Remplacez par l'image Docker que vous avez construite
+          image: najiabderraouf2/backend:pfe
           ports:
             - containerPort: 5000
           env:
