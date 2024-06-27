@@ -46,16 +46,17 @@ pipeline {
                 }
             }
         }
-        // stage('Deploy to Kubernetes') {
-        //     steps {
-        //         script {
-        //             // Apply Kubernetes YAML files
-        //             withCredentials([file(credentialsId: 'kubeconfig-credentials-id', variable: 'KUBECONFIG')]) {
-        //                 sh 'kubectl apply -f kubernetes/'
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    dir('backend') {
+                        sh 'kubectl apply -f frontend/'
+                        sh 'kubectl apply -f backend/'
+                    }
+                    
+                }
+            }
+        }
     }
 
     post {
