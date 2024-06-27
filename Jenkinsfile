@@ -58,18 +58,18 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to kuberntes (production)') {
-            steps {
-                script {
-                    dir('kubernetes') {
-                        sh 'kubectl apply -f frontend/ -n production'
-                        sh 'kubectl apply -f backend/ -n production'
-                        sh 'kubectl apply -f database/ -n production'
-                    }
+        // stage('Deploy to kuberntes (production)') {
+        //     steps {
+        //         script {
+        //             dir('kubernetes') {
+        //                 sh 'kubectl apply -f frontend/ -n production'
+        //                 sh 'kubectl apply -f backend/ -n production'
+        //                 sh 'kubectl apply -f database/ -n production'
+        //             }
                     
-                }
-            }
-        }
+        //         }
+        //     }
+        // }
     }
 
     post {
