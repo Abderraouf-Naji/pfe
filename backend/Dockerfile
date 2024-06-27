@@ -1,5 +1,5 @@
 # Utilisez une image de base qui prend en charge Node.js
-FROM node:latest
+FROM node
 
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN npm install
 EXPOSE 5000
 
 # Définir une variable d'environnement pour la connexion à la base de données MongoDB
-ENV MONGODB_URL=mongodb+srv://root:1234@ccluster0.hsgng0p.mongodb.net/EStore
+#ENV MONGODB_URL=mongodb+srv://root:1234@ccluster0.hsgng0p.mongodb.net/EStore
 
 # Commande pour démarrer le serveur backend
 CMD ["node", "index.js"]

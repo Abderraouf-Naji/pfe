@@ -14,6 +14,7 @@ RUN npm install && npm run build
 FROM nginx:latest as runtime
 
 # Copier les fichiers construits dans le répertoire par défaut de Nginx
+COPY ./default.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Copier le fichier de configuration Nginx si nécessaire
