@@ -46,12 +46,23 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Kubernetes') {
+        stage('Deploy to kuberntes (test)') {
             steps {
                 script {
                     dir('kubernetes') {
-                        sh 'kubectl apply -f frontend/'
-                        sh 'kubectl apply -f backend/'
+                        sh 'kubectl apply -f frontend/ -n test'
+                        sh 'kubectl apply -f backend/ -n test'
+                    }
+                    
+                }
+            }
+        }
+        stage('Deploy to kuberntes (production)') {
+            steps {
+                script {
+                    dir('kubernetes') {
+                        sh 'kubectl apply -f frontend/ -n production'
+                        sh 'kubectl apply -f backend/ -n production'
                     }
                     
                 }
