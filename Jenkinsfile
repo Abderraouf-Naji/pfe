@@ -49,7 +49,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    dir('backend') {
+                    dir('kubernetes') {
                         sh 'kubectl apply -f frontend/'
                         sh 'kubectl apply -f backend/'
                     }
