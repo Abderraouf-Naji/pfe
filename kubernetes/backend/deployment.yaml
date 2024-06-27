@@ -20,6 +20,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
-          env:
-            - name: MONGO_URI
-              value: "mongodb://mongodb-service:27017/EStore" 
+          # env:
+          #   - name: MONGO_URI
+          #     value: "mongodb://mongodb-service:27017/EStore" 
