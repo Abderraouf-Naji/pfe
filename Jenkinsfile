@@ -52,6 +52,7 @@ pipeline {
                     dir('kubernetes') {
                         sh 'kubectl apply -f frontend/ -n test'
                         sh 'kubectl apply -f backend/ -n test'
+                        sh 'kubectl apply -f database/ -n test'
                     }
                     
                 }
@@ -63,6 +64,7 @@ pipeline {
                     dir('kubernetes') {
                         sh 'kubectl apply -f frontend/ -n production'
                         sh 'kubectl apply -f backend/ -n production'
+                        sh 'kubectl apply -f database/ -n production'
                     }
                     
                 }
