@@ -20,3 +20,6 @@ services:
       - "5000:5000"
     environment:
       - MONGO_URI=mongodb+srv://root:1234@ccluster0.hsgng0p.mongodb.net/EStore
+    depends_on:
+       - database
+  
