@@ -17,6 +17,7 @@ spec:
       containers:
         - name: frontend
           image: najiabderraouf2/frontend:pfe
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
