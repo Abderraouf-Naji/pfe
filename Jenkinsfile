@@ -23,7 +23,7 @@ pipeline {
                 script {
                     // Build Docker image for backend
                     dir('backend') {
-                        sh 'docker build -t $DOCKER_HUB_REPO/backend:latest .'
+                        sh 'docker build -t $DOCKER_HUB_REPO/backend:pfe .'
                     }
                 }
             }
